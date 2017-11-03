@@ -1,0 +1,29 @@
+
+.bilibili_daohang ul{
+    list-style-type: none;
+    float: left;
+
+
+}
+.bilibili_daohang a:link,.bilibili_daohang a:visited{
+        text-decoration: none;
+
+    height: 42px;
+
+}
+.bilibili_daohang li{
+    display: inline;
+    height: 42px;
+    line-height: 42px;
+    width: 72px;
+
+}
+.bilibili_daohang a:hover{
+    height: 42px;
+    background-color: #2dffc7;
+
+}
+.bilibili_daohangtiao_you ul{
+    float: right;
+    padding-right:20px;
+}

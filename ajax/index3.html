@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+<script>
+    (function () {
+        function people(name){
+            this._name = name;
+        }
+        people.prototype.say = function(){
+            alert("peo-say"+" "+this._name);
+        }
+        window.people = people;
+    }());
+
+    (function () {
+        function student (name){
+            this._name = name;
+        }
+        student.prototype = new people();
+        var supersay = student.prototype.say;
+        student.prototype.say = function () {
+            supersay.call(this);
+            alert("stu_say"+" "+this._name);
+        }
+        window.student = student;
+    }());
+
+    var s = new student("tail");
+s.say();
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<select multiple="multiple">
+    <option value="0">小学</option>
+    <option value="1">初中</option>
+    <option value="2">高中</option>
+    <option value="3">大学</option>
+</select>
+<input type="button" value="获取单选框中的value" onclick="f1()">
+<input type="button" value="获取复选框中的value" onclick="f2()">
+<input type="button" value="选中复选框中的大学" onclick="f3()">
+</body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+        function f1(){
+            console.log($("option:selected").val());
+        }
+    function f2(){
+        console.log($("select").val());
+    }
+    function f3(){
+        $("select").val("3");
+    }
+</script>
+</html>

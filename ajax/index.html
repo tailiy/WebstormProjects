@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="box" onclick="aaa()" style="width: 400px; height: 400px; border: solid 1px; background-color: #014c8c">
+    <p id="pid">我是pid</p>
+</div>
+<input type="button" value="按钮" onclick="btnclick()">
+<script>
+    function aaa(){
+       var a =document.getElementById("box");
+        console.log("11");
+        a.style.width = "700px";
+        var body = document.body;
+        var input = document.createElement("input");
+        input.type="button";
+        input.value="按钮"
+        body.appendChild(input)
+
+
+
+    }
+    function addNode(){
+        var div = document.getElementById("box");
+        var pid = document.getElementById("pid");
+        var newnode = document.createElement("p");
+        newnode.innerHTML="动态添加一个P元素";
+        div.insertBefore(newnode,pid);
+    }
+     function remove(){
+         var div = document.getElementById("box");
+         var p = div.removeChild(div.childNodes[1]);
+     }
+    function getSize(){
+        var width = document.documentElement.offsetWidth||document.body.offsetWidth;
+        var height = document.documentElement.offsetHeight||document.body.offsetHeight;
+        alert("width"+width+",height:"+height);
+    }
+    function showwindow(){
+        alert(window.innerWidth+","+window.innerHeight);
+    }
+    function btnclick(){
+        window.open("hello.html","windowname","width=500px,height=500px,top=200px,left=200px");
+    }
+
+</script>
+</body>
+</html>

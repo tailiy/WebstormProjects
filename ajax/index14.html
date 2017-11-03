@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;;
+    }
+    /*
+        @keyframes change {
+        0%{
+            opacity:0;
+        }
+
+
+        100%{
+            opacity:1;
+            }
+        }
+
+        .div{
+
+        }
+        .donghua{
+            animation: change 10s infinite linear;
+        }
+    */
+
+</style>
+<body style="">
+<div class="div" style="background-image: url(pic/1.jpg),url(pic/2.jpg),url(pic/3.jpg),url(pic/4.jpg); width: 100%; height: 100%;  position: absolute; z-index:0;">
+
+</div>
+
+<input type="text" value="时间" id="qwe">
+<input type="button" value="换" onclick="f2()">
+</body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var j = 5; //共j张图
+        var i = 2;
+        var time = 10000;
+        setInterval(bgchange, time);
+
+        function bgchange() {
+            hide()
+            setTimeout(function () {
+                $(".div").css("background-image", "url('pic/" + i + ".jpg')");
+        },2000);
+
+            show()
+
+            if (i < j) {
+                i++;
+            } else i = 1;
+        }
+        function hide(){
+            $(".div").animate({"opacity":0.1},2000);
+        }
+        function show(){
+            $(".div").animate({"opacity":1},2000);
+        }
+        function csschange(){
+            $(".div").css({"change":"2s"});
+        }
+    });
+   /* function f1(){
+       document.getElementById("qwe").style.backgroundColor='#'+Math.floor(Math.random()*0xffffff).toString(16);
+
+    }
+
+    function f2(){
+        $("div").animate({"opacity":0},1000);
+        setTimeout("f3()",1000);
+    }
+    function f3(){
+        $("div").css("background-image","url(pic/2.jpg)");
+        $("div").animate({"opacity":1},1000);
+        $("div").animate({"opacity":0.5},1000);
+        setTimeout("f5()",2000);
+        $("div").animate({"opacity":1},1000);
+        $("div").animate({"opacity":0.5},1000);
+    }
+    function f4(){
+        $("div").css("background-image","url(pic/2.jpg)");
+    }
+    function f5(){
+        $("div").css("background-image","url(pic/3.jpg)");
+    }*/
+
+
+</script>
+</html>

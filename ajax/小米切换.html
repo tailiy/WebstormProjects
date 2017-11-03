@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .con{
+            width: 992px;
+            height: 420px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .con img{
+            width: 992px;
+            height: 420px;
+
+        }
+        .con ul{
+            top: 0;
+            left: 0;
+        }
+
+        .con ul li{
+            position: absolute;
+        }
+
+        .con ol{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .con ol li{
+            float: left;
+            display: block;
+            width: 30px;
+            height: 25px;
+            text-align: center;
+            line-height: 25px;
+            margin-left: 10px;
+            border: 1px solid #ccc;
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .con ol .current{
+            background: rgba(0,0,0,0.8);
+        }
+
+        .btnL,.btnR{
+            background:url("pic/0.jpg") -84px 0;
+            width: 41px;
+            height: 69px;
+            top: 50%;
+            margin-top: -35px;
+            display: block;
+            position: absolute;
+            display: none;
+        }
+        
+        .btnR{
+            right: 0;
+            background-position: -125px 0;
+        }
+
+        .btnL:hover{
+            background-position: 0 0;
+        }
+
+        .btnR:hover{
+            background-position: -42px  0;
+        }
+
+
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            var num = 0;
+            var timer=null;
+            timer = setInterval(fun,1000);
+            $(".con").hover(function(){
+                $(".btnL,.btnR").show();
+                clearInterval(timer);
+            },function(){
+                $(".btnL,.btnR").hide();
+                timer = setInterval(fun,1000);
+            })
+            $(".con ul li").eq(0).show().siblings().hide();
+            $(".btnR").click(fun)
+            $(".btnL").click(function(){
+                $(".con ul li").eq(num).fadeOut(500);
+                num--;
+                if(num>3){
+                    num=0;
+                }
+                if(num<0){
+                    num=3;
+                }
+                $(".con ul li").eq(num).fadeIn(500)
+                $(".con ol li").eq(num).addClass("current").siblings().removeClass("current");
+            })
+            $(".con ol li").click(function(){
+                $(this).addClass("current").siblings().removeClass("current");
+                num=$(this).index();
+                $(".con ul li").eq($(this).index()).fadeIn(500).siblings().fadeOut(500);
+            })
+             function fun(){
+                $(".con ul li").eq(num).fadeOut(500);
+                num++;
+                if(num>3){
+                    num=0;
+                }
+                if(num<0){
+                    num=3;
+                }
+                $(".con ul li").eq(num).fadeIn(500)
+                $(".con ol li").eq(num).addClass("current").siblings().removeClass("current");
+            }
+        })
+    </script>
+</head>
+<body>
+<div class="con">
+    <ul>
+        <li><img src="pic/0.jpg" alt=""/></li>
+        <li><img src="pic/1.jpg" alt=""/></li>
+        <li><img src="pic/2.jpg" alt=""/></li>
+        <li><img src="pic/3.jpg" alt=""/></li>
+    </ul>
+    <ol>
+        <li class="current">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ol>
+    <a href="#" class="btnL"></a>
+    <a href="#" class="btnR"></a>
+
+</div>
+</body>
+</html>

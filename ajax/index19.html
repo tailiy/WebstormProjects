@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    .ball1{
+        background: green;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+
+    }
+
+    .ball2{
+        background: yellow;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+
+    }
+
+    .ball3{
+        background: grey;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+
+    }
+</style>
+<body>
+<div class="ball1" style="margin-left: 0px"></div>
+<div class="ball2" style="margin-left: 0px"></div>
+<div class="ball3" style="margin-left: 0px"></div>
+</body>
+<script src="../node_modules/bluebird/js/browser/bluebird.js"></script>
+<script>
+
+
+        var ball1 = document.querySelector(".ball1");
+        var ball2 = document.querySelector(".ball2");
+        var ball3 = document.querySelector(".ball3");
+
+
+
+   /*     function f1(clazz, weizhi, cb) {
+
+            setTimeout(function () {
+
+                var marginl = parseInt(clazz.style.marginLeft, 10);
+
+
+                if (marginl < weizhi) {
+
+                    marginl++;
+
+                } else if (marginl > weizhi) {
+                    marginl--;
+                } else if (marginl === weizhi) {
+
+                    cb && cb();
+                    return;
+                }
+                clazz.style.marginLeft = marginl+"px";
+
+                f1(clazz, weizhi, cb);
+            }, 13);
+        }
+
+        f1(ball1, 100, function(){
+            f1(ball2, 200, function(){
+                f1(ball3, 300, function(){
+
+                })
+            })
+        })*/
+
+
+    var Promise  = window.Promise;
+    function f2(clazz,weizhi){
+        return new Promise(function(resolve,reject){
+            function f1() {
+
+                setTimeout(function () {
+
+                    var marginl = parseInt(clazz.style.marginLeft, 10);
+
+
+                    if (marginl < weizhi) {
+
+                        marginl++;
+
+                    } else if (marginl > weizhi) {
+                        marginl--;
+                    } else if (marginl === weizhi) {
+
+                        resolve();
+                    }
+                    clazz.style.marginLeft = marginl+"px";
+
+                    f1();
+                }, 13);
+            }
+            f1();
+        })
+    }
+
+    f2(ball1,100)
+            .then(function(){
+                return f2(ball2,200);
+            }).then(function(){
+                return f2(ball3,300);
+            })
+</script>
+</html>

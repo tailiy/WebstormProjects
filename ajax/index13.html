@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+ <ul class="shu">
+     <li class="liu">刘</li>
+     <li>关</li>
+     <li>张</li>
+ </ul>
+
+ <ul class="wu">
+     <li class="sun">孙</li>
+     <li>周</li>
+     <li>黄</li>
+ </ul>
+<input type="button" value="替换" onclick="f1()">
+ <input type="button" value="替换2" onclick="f2()">
+ <input type="button" value="删除" onclick="f3()">
+ <input type="button" value="添加节点的末尾" onclick="f4()">
+ <input type="button" value="添加节点的头部" onclick="f5()">
+ <input type="button" value="删除remove" onclick="f6()">
+ <input type="button" value="复制事件" onclick="f7()">
+</body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+    function f1(){
+         $(".sun").replaceAll(".liu");
+    }
+    function f2(){
+        $(".sun").replaceWith($(".liu"));
+    }
+    function f3(){
+        $(".shu").empty();
+    }
+    function f4(){
+        $(".shu").append("<li>赵</li>");
+    }
+    function f5(){
+        $(".shu").prepend("<li>🐎</li>")
+    }
+    function f6(){
+        $(".shu li:first,.sun").remove();
+    }
+    function f7(){
+        $(".shu li").click(function () {
+            console.log($(this).html());
+        })
+        var shu_liu = $(".liu").clone(true);
+        $(".wu").append(shu_liu);
+    }
+</script>
+</html>

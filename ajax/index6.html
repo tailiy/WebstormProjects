@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="checkbox" value="1" name="hobby" class="hby">篮球&nbsp;&nbsp;
+<input type="checkbox" value="2" name="hobby" class="hby">排球&nbsp;&nbsp;
+<input type="checkbox" value="3" name="hobby" class="hby">地球&nbsp;&nbsp;
+<input type="checkbox" value="4" name="hobby" class="hby">水球&nbsp;&nbsp;
+
+
+<input type="radio" value="男" name="sex" >男&nbsp;&nbsp;
+<input type="radio" value="女" name="sex" >女&nbsp;&nbsp;
+<input type="radio" value="保密" name="sex" >保密&nbsp;&nbsp;
+
+<input type="button" value="触发" onclick="f1()">
+<input type="button" onclick="f2()" value="获取选中value的值">
+<!--假如value的值是字符串val方法里面选中的参数要加双引号，数字则不需要-->
+<input type="button" onclick="f3()" value="选中第一和第三个复选框">
+<input type="button" onclick="f4()" value="全选">
+<input type="button" onclick="f5()" value="全不选">
+<input type="button" onclick="f6()" value="反选">
+</body></body>
+
+<script src="jquery.js"></script>
+<script>
+    function f1(){
+        console.log($("input:lt(4):checked"));
+        console.log($("input:gt(3):lt(2)"))
+    }
+    function f2(){
+        for(var i = 0;i<$(".hby:checked").length;i++){
+            console.log($(".hby:eq("+i+")").val());
+        }
+
+    }
+    function f3(){
+        $(".hby").val([1,3]);
+    }
+    function f4(){
+        $(".hby").prop("checked",true);
+        console.log("11");
+    }
+    function f5(){
+        $(".hby").prop("checked",false);
+        console.log("22");
+    }
+    function f6(){
+        var flag=$(".hby").prop("checked");
+        for(var i = 0;i<$(".hby").length;i++){
+            $(".hby").prop("checked",!flag);
+        }
+    }
+
+</script>
+</html>

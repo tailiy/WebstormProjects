@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>地区的三级联动</title>
+</head>
+<body>
+省份：<select id="province" onchange="showcity()">
+        <option>-请选择省份-</option>
+    </select>&nbsp;&nbsp;
+
+城市： <select id="city" onchange="showarea()">
+       <option>-请选择城市-</option>
+    </select>&nbsp;&nbsp;
+
+地区： <select id="area">
+       <option>-请选择地区-</option>
+    </select>&nbsp;&nbsp;
+</body>
+<script src="jquery.js"></script>
+<script>
+    var index = null;
+    $.ajax({
+        url:'./chianArea.xml',
+        type:'get',
+        dateType:'xml',
+        success: function (msg) {
+            index=msg;
+            $(msg).find("province").each(function(k,v){
+                var nm= $(this).attr("name");
+                var id = $(this).attr("postcode");
+                $("#province").append("<option value="+id+">"+nm+"</option>");
+            })
+        }
+    })
+
+    function showcity(){
+        $("#city").empty();
+        $("#city").append("<option >-请选择城市-</option>");
+        var pid=$("#province").val();
+            var two_pid = pid.substr(0,2);
+        $(index).find("city[postcode^="+two_pid+"]").each(function (k,v) {
+            var nm= $(this).attr("name");
+            var id = $(this).attr("postcode");
+            $("#city").append("<option value="+id+">"+nm+"</option>");
+        })
+    }
+
+    function showarea(){
+        $("#area").empty();
+        $("#area").append("<option >-请选择地区-</option>");
+        var pid=$("#city").val();
+        var four_pid = pid.substr(0,4);
+        $(index).find("area[postcode^="+four_pid+"]").each(function (k,v) {
+            var nm= $(this).attr("name");
+            var id = $(this).attr("postcode");
+            $("#area").append("<option value="+id+">"+nm+"</option>");
+        })
+    }
+</script>
+</html>

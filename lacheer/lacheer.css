@@ -1,0 +1,171 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "microsoft yahei";
+    font-size: 14px;
+}
+/* 头部*/
+.contain{
+     background-color: #000000;
+     width: 100%;
+     height: 250px;
+ }
+.praminy{
+
+    width: 60%;
+    height: 230px;
+    margin: 0 auto;
+
+}
+.nav-left{
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.nav-left ul li {
+    margin-right: 10px;
+    display: inline;
+    line-height: 24px;
+    height: 24px;
+
+
+}
+.nav-right ul li a{
+    color: #b4b4b5;
+}
+.nav-right ul li a:hover{
+    text-decoration: none;
+}
+.nav-right{
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.nav-right ul li{
+    margin-right: 10px;
+    display: inline;
+    line-height: 24px;
+    height: 24px;
+    color: #8bbf3a;
+}
+.nav-left ul li a{
+    color: #b4b4b5;
+}
+.nav-left ul li a:hover{
+    text-decoration: none;
+}
+
+.nav-img{
+    width: 100%;
+    height: auto;
+    padding: 32px 0 10px;
+    margin: 0 auto;
+    text-align: center;
+    float: left;
+}
+
+.nav-img img{
+    width: 214px;
+    height: 52px;height: auto;
+
+}
+
+/*导航栏*/
+.nav-box{
+    background-color: #000000;
+    width: 100%;
+    height: 52px;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+.nav-box ul{
+    float: right;
+    padding-right: 100px;
+}
+.nav-box ul li {
+    height: 52px;
+    line-height: 52px;
+    display: inline;
+    padding-right: 30px;
+}
+.nav-box ul li a{
+    color: #8bbf3a;
+}
+.nav-box ul li a:hover{
+    text-decoration: none;
+}
+.input-serach{
+    float: right;
+    width: 30%;
+    height: 52px;
+    background-color: #8bbf3a;
+}
+.search{
+
+    color: #000000;
+    padding-left: 10px;
+    width: 500px;
+    height: 52px;
+    outline:none;
+    background-color: #8bbf3a;
+    border: none;
+}
+.carousel-control{
+    line-height: 800px;
+}
+.drop-down{
+    position: relative;
+    color: #fff;
+}
+.drop-down ul{
+    display: none;
+}
+.drop-down:hover ul {
+    position: absolute;
+    display: block;
+    background-color: #0082ff;
+    width: auto;
+    left: -100px;
+    border-radius: 3px;
+    z-index: 999;
+}
+input::-webkit-input-placeholder{
+    color: #2dffc7;
+}
+/*轮播图*/
+.left{
+
+    background-image:none !important;
+}
+.right{
+    background-image:none !important;
+}
+/*产品分类*/
+.slot{
+    width: 70%;
+    height: 147px;
+    padding-top: 55px;
+    margin: 0 auto;
+}
+.homepage{
+
+    margin: 0px auto;
+    text-align: center;
+}
+.homepage img:hover{
+    box-shadow: 10px 10px 5px #888888;
+    margin-top: -1px;
+    margin-left: -1px;
+}
+.homepage img{
+
+    margin: 0px 10px;
+}
+/*产品套装*/
+.product-box {
+
+    width: 70%;
+    margin: 50px auto;
+}

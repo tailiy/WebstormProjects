@@ -1,0 +1,36 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.head img{
+    width: 100%;
+}
+.daohanglang{
+    background-color: #333;
+    width: 100%;
+    height: 40px;
+
+}
+.zhong{
+    width: 1226px;
+    margin: auto;
+    height: 40px;
+    background-color: #014c8c;
+}
+.zuo ul{
+    list-style-type: none;
+
+}
+.zuo a{
+    text-decoration: none;
+    color: #b0b0b0;
+
+    background-color: #101112;
+
+}
+.zuo li {
+    line-height: 40px;
+    display: inline;
+    text-align: center;
+
+}

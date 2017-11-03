@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<link href="../bootstrap/bootstrap.min.css" rel="stylesheet">
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+    }
+    body{
+        background: rgb(178,200,187);
+    }
+    .form{
+     width: 400px;
+     height: 200px;
+
+    }
+    .big_div{
+        padding: 50px;
+        width: 500px;
+        height: 300px;
+        margin: 200px auto;
+        border-radius: 5px;
+        background:#eef3f7;
+        box-shadow:10px 6px 8px gray;
+    }
+</style>
+<body>
+<div class="big_div">
+    <form class="form">
+        <div class="form-group">
+            <label for="exampleInputEmail1">帐号</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="username">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">密码</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password">
+        </div>
+        <div style="margin-top: 30px">
+            <button type="submit" class="btn btn-info"style="width: 100px">登录</button>
+            <button type="submit" class="btn btn-info" style="float: right;width: 100px" href="/index21">注册</button>
+
+        </div>
+
+    </form>
+</div>
+</body>
+<script src="../bootstrap/bootstrap.min.js"></script>
+</html>

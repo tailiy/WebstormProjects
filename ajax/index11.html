@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul>
+    <li>刘</li>
+    <li>关</li>
+    <li>张</li>
+</ul>
+<input type="button" value="触发" onclick="f1()">
+</body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+    function f1(){
+    var color = ["red","bule","green"];
+    $.each(color,function(k,v){
+        console.log(k+"------"+v+"========"+this);
+
+    })
+
+        var cat={name:"kitty",age:5,color:"red",eat:function(){
+            console.log("吃饭");
+        }}
+        $.each(cat,function(k,v){
+            console.log(k+"---------"+v+"======="+this
+            );
+        })
+    }
+
+    $("li").each(function(k,v){
+        console.log(k+"----------"+v+"====="+this);
+        v.style.color ="red";
+    })
+</script>
+</html>

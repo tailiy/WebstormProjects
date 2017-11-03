@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" value="123" id="id" name="name" class="apple" address="beijing">
+<input value="获取" onclick="f1()" type="button">
+<input value="修改" onclick="f2()" type="button">
+<input value="批量修改" onclick="f3()" type="button">
+<input value="函数修改" onclick="f4()" type="button">
+</body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+    function f1(){
+        console.log($("#id").attr("type"));
+        console.log($("#id").attr("value"));
+        console.log($("#id").attr("id"));
+        console.log($("#id").attr("name"));
+        console.log($("#id").attr("class"));
+        console.log($("#id").attr("address"));
+    }
+    function f2(){
+        $("#id").attr("value","456");
+    }
+    function f3(){
+        var fn = {name:'tail',address:'guangzhou',value:'789'};
+        $("#id").attr(fn);
+    }
+    function f4(){
+
+    }
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+        list-style: none;
+    }
+    .contains{
+        width: 1000px;
+        height: 400px;
+        overflow: hidden;
+        margin: 100px auto;
+    }
+    .contains ul{
+        width: 1400px;
+    }
+    .contains li{
+        width: 200px;
+        height: 400px;
+        float: left;
+    }
+    .contains img{
+        height: 400px;
+        width: 600px;
+    }
+</style>
+<body>
+<div class="contains">
+    <ul>
+        <li><img src="pic/0.jpg"></li>
+        <li><img src="pic/0.jpg"></li>
+        <li><img src="pic/0.jpg"></li>
+        <li><img src="pic/0.jpg"></li>
+        <li><img src="pic/0.jpg"></li>
+    </ul>
+</div>
+</body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="jquery.js"></script>
+<script>
+    $(function(){
+        $(".contains li").hover(function(){
+            $(this).stop().animate({"width":600},500).siblings().stop().animate({"width":100},500);
+        },function(){
+            $(".contains li").stop().animate({"width":200},500);
+        })
+    })
+
+</script>
+</html>

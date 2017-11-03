@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" value="按钮" onclick="stopwin()">
+<p id="pid"></p>
+</body>
+<script>
+    var mytime = setInterval(function () {
+        showtime();
+    },1000);
+    function showtime(){
+        var time = new Date();
+        var t = time.toLocaleTimeString();
+        var pid = document.getElementById("pid");
+        pid.innerHTML = t;
+    }
+    function stoptime(){
+        clearInterval(mytime);
+    }
+    var win;
+    function mywin(){
+        alert("hello");
+         win = setTimeout(function(){
+            mywin();
+        },3000);
+    }
+    function stopwin(){
+        clearTimeout(win);
+    }
+    mywin();
+</script>
+</html>
